@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "topic": "loops",
+    "track": "python_for_ai",
+    "version": "1.0",
+    "created_at": "2025-11-26 15:13:10.997365Z"
+  },
+  "theory": [
+    {
+      "id": "loops_intro_en",
+      "lang": "en",
+      "title": "What is a loop?",
+      "content": "A loop is a way to repeat a block of code multiple times.\nIn Python there are two main loop types:\n1. for loop  → used when you know or can iterate over a sequence (list, string, range).\n2. while loop → used when you want to repeat while a condition is true.\n"
+    },
+    {
+      "id": "loops_intro_ar",
+      "lang": "ar",
+      "title": "ما هي الحلقة التكرارية (Loop)؟",
+      "content": "الحلقة التكرارية هي طريقة لتكرار جزء من الكود أكثر من مرة.\nفي بايثون يوجد نوعان رئيسيان من الحلقات:\n1. for  → نستخدمها عندما نريد التكرار على مجموعة عناصر مثل list أو string أو range.\n2. while → نستخدمها عندما نريد التكرار طالما شرط معيّن صحيح.\n"
+    },
+    {
+      "id": "for_basic_en",
+      "lang": "en",
+      "title": "Basic for loop",
+      "content": "Example: print numbers from 1 to 5:\n\nfor i in range(1, 6):\n    print(i)\n\nrange(1, 6) generates the numbers 1, 2, 3, 4, 5.\n"
+    },
+    {
+      "id": "for_basic_ar",
+      "lang": "ar",
+      "title": "حلقة for بسيطة",
+      "content": "مثال: طباعة الأرقام من 1 إلى 5:\n\nfor i in range(1, 6):\n    print(i)\n\nالدالة range(1, 6) تولّد الأرقام: 1, 2, 3, 4, 5.\n"
+    },
+    {
+      "id": "while_basic_en",
+      "lang": "en",
+      "title": "Basic while loop",
+      "content": "Example: print numbers from 1 to 5 using while:\n\nn = 1\nwhile n <= 5:\n    print(n)\n    n += 1\n\nBe careful: if you forget to update n, the loop may never stop.\n"
+    },
+    {
+      "id": "while_basic_ar",
+      "lang": "ar",
+      "title": "حلقة while بسيطة",
+      "content": "مثال: طباعة الأرقام من 1 إلى 5 باستخدام while:\n\nn = 1\nwhile n <= 5:\n    print(n)\n    n += 1\n\nانتبه: إذا نسيت تحديث قيمة n قد تصبح الحلقة لا نهائية ولا تتوقف.\n"
+    }
+  ],
+  "examples": [
+    {
+      "id": "example_sum_1_to_n",
+      "lang": "en",
+      "title": "Sum numbers from 1 to n",
+      "code": "n = int(input(\"Enter a positive integer: \"))\ntotal = 0\nfor i in range(1, n + 1):\n    total += i\nprint(\"Sum from 1 to\", n, \"=\", total)\n",
+      "explanation": "This example uses a for loop and an accumulator variable `total` to add all numbers from 1 to n."
+    },
+    {
+      "id": "example_sum_1_to_n_ar",
+      "lang": "ar",
+      "title": "مجموع الأعداد من 1 إلى n",
+      "code": "n = int(input(\"أدخل عددًا صحيحًا موجبًا: \"))\ntotal = 0\nfor i in range(1, n + 1):\n    total += i\nprint(\"مجموع الأعداد من 1 إلى\", n, \"=\", total)\n",
+      "explanation": "نستخدم حلقة for ومتغيّر total لجمع كل الأعداد من 1 إلى n."
+    },
+    {
+      "id": "example_guess_game",
+      "lang": "en",
+      "title": "Simple guessing game",
+      "code": "secret = 7\nattempts = 0\n\nwhile True:\n    guess = int(input(\"Guess the number (1-10): \"))\n    attempts += 1\n\n    if guess == secret:\n        print(\"Correct! You needed\", attempts, \"attempts.\")\n        break\n    elif guess < secret:\n        print(\"Too small, try again.\")\n    else:\n        print(\"Too big, try again.\")\n",
+      "explanation": "This while loop continues until the user guesses the secret number, then we break out of the loop."
+    },
+    {
+      "id": "example_guess_game_ar",
+      "lang": "ar",
+      "title": "لعبة تخمين بسيطة",
+      "code": "secret = 7\nattempts = 0\n\nwhile True:\n    guess = int(input(\"خمّن الرقم (من 1 إلى 10): \"))\n    attempts += 1\n\n    if guess == secret:\n        print(\"صحيح! احتجت إلى\", attempts, \"محاولة.\")\n        break\n    elif guess < secret:\n        print(\"الرقم أصغر من المطلوب، حاول مرة أخرى.\")\n    else:\n        print(\"الرقم أكبر من المطلوب، حاول مرة أخرى.\")\n",
+      "explanation": "تستمر حلقة while حتى يُخمّن المستخدم الرقم الصحيح، ثم نستخدم break للخروج من الحلقة."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "q1_for_print_1_to_10_ar",
+      "lang": "ar",
+      "type": "coding",
+      "level": "beginner",
+      "question": "اكتب برنامجًا يطبع الأرقام من 1 إلى 10 باستخدام حلقة for.",
+      "hint": "استخدم range(1, 11) في حلقة for.",
+      "solution_code": "for i in range(1, 11):\n    print(i)\n"
+    },
+    {
+      "id": "q2_while_even_2_to_20_ar",
+      "lang": "ar",
+      "type": "coding",
+      "level": "beginner",
+      "question": "اكتب برنامجًا يطبع الأعداد الزوجية من 2 إلى 20 باستخدام while.",
+      "hint": "ابدأ من 2 وازِد المتغيّر بمقدار 2 في كل دورة.",
+      "solution_code": "n = 2\nwhile n <= 20:\n    print(n)\n    n += 2\n"
+    },
+    {
+      "id": "q3_sum_list_en",
+      "lang": "en",
+      "type": "coding",
+      "level": "beginner",
+      "question": "Given a list of numbers, print the sum using a for loop.",
+      "hint": "Create a variable total = 0 and add each element to it inside the loop.",
+      "starter_code": "numbers = [3, 5, 2, 8, 1]\n# TODO: use a for loop to compute the sum\n",
+      "solution_code": "numbers = [3, 5, 2, 8, 1]\ntotal = 0\nfor num in numbers:\n    total += num\nprint(\"Sum =\", total)\n"
+    },
+    {
+      "id": "q4_break_continue_mix_en",
+      "lang": "en",
+      "type": "conceptual",
+      "level": "beginner",
+      "question": "Explain the difference between 'break' and 'continue' in a loop and give a short example of each in Python.",
+      "solution_text": "break: completely exits the loop.\ncontinue: skips the rest of the current iteration and goes to the next one.\n\nExample break:\nfor i in range(1, 10):\n    if i == 5:\n        break\n    print(i)  # prints 1,2,3,4\n\nExample continue:\nfor i in range(1, 6):\n    if i == 3:\n        continue\n    print(i)  # prints 1,2,4,5 (skips 3)\n"
+    }
+  ]
+}
